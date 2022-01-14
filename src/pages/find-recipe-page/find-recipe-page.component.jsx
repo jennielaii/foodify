@@ -12,10 +12,12 @@ import {
 import { connect } from "react-redux";
 import withSpinner from "../../hoc/withSpinner";
 import EmptyMessage from "../../components/empty-message/empty-message.component";
-const DisplayRecipesWithSpinner = withSpinner(RecipeCardContainer);
+
 const FindRecipePage = ({ isStarted, isFetching, recipeData }) => {
+const DisplayRecipesWithSpinner = withSpinner(RecipeCardContainer);
   return (
-    <RecipePageContainer>
+    <div>
+      <RecipePageContainer>
       <FindRecipeTitle />
       <FindRecipeForm />
       <DisplayRecipesWithSpinner
@@ -25,7 +27,9 @@ const FindRecipePage = ({ isStarted, isFetching, recipeData }) => {
       {!recipeData && (
         <EmptyMessage>You Haven't found any Recipes yet!</EmptyMessage>
       )}
-    </RecipePageContainer>
+      
+      </RecipePageContainer>
+    </div>
   );
 };
 
@@ -36,3 +40,29 @@ const mapStateToProps = createStructuredSelector({
 });
 
 export default connect(mapStateToProps)(FindRecipePage);
+
+// const FindRecipePage = () => {
+// const mapStateToProps = createStructuredSelector({
+//     isFetching: selectLoadingStatus,
+//     isStarted: selectFetchedStarted,
+//     recipeData: selectFetchedRecipes,
+//   });
+// const DisplayRecipesWithSpinner = withSpinner(RecipeCardContainer);
+// const FindRecipePage = ({ isStarted, isFetching, recipeData }) => {
+//   return (
+//        <RecipePageContainer>
+//       <FindRecipeTitle />
+//       <FindRecipeForm />
+//       <DisplayRecipesWithSpinner
+//         isLoading={isFetching}
+//         isStartedFetching={isStarted}
+//       />
+//       {!recipeData && (
+//         <EmptyMessage>You Haven't found any Recipes yet!</EmptyMessage>
+//       )}
+//     </RecipePageContainer>
+//   );
+// };
+
+
+// export default connect(mapStateToProps)(FindRecipePage);

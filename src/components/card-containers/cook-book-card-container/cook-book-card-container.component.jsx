@@ -18,7 +18,7 @@ const CookBookCardContainer = ({ mealCards }) => {
       <div>
         {mealCards.length === 0 && (
           <EmptyMessage>
-            You Haven't added any Favourite recipes yet!
+            You Haven't added any Favorite recipes yet!
           </EmptyMessage>
         )}
       </div>

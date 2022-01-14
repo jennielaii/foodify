@@ -41,7 +41,8 @@ const FindCalorieAmountForm = ({ fetchCalorieData }) => {
   const classes = useStylesForCalorieCounterForm();
 
   return (
-    <CalorieCOunterForm onSubmit={formOnSubmitHandler}>
+    <div>
+      <CalorieCOunterForm onSubmit={formOnSubmitHandler}>
       <InputField
         className={classes.searchField}
         id="recipe-search"
@@ -79,6 +80,7 @@ const FindCalorieAmountForm = ({ fetchCalorieData }) => {
         <SearchIcon fontSize="large" />
       </CustomIconButton>
     </CalorieCOunterForm>
+    </div>
   );
 };
 

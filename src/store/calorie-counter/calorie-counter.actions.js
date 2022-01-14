@@ -1,4 +1,4 @@
-import { CALORIE_COUNTER } from "../../config/api";
+import { CALORIE_COUNTER } from "../../config/api.js";
 import { fetchData } from "../../utils/fetchData";
 import { calorieCounterActionTypes } from "./calorie-counter.types";
 
